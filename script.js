@@ -60,7 +60,7 @@ function playGame (playerChoice){
             break; 
     }
 
-    return result; 
+    return result;
 }
 
 
