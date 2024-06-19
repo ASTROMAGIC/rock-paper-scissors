@@ -71,17 +71,27 @@ function playGame (playerChoice){
     return result;
 }
 
+// simply putting setTimeout by itself will not work. it needs to be wrtten into the function or into the if else statements to properly work, with the time delay actually written as well. 
+
 // there are multiple ways to restart this game. I can either write a new function that integrates with the playGame function I have already wrote, or integrate ways of resetting the game into my switch cases. Writing the function will require less code written and is far far cleaner, so I will go that route. 
 
 function resetGame() {
-    playerScore = 0;
+    resultDisplay.textContent= "Game Resetting..."
+
+    setTimeout(() => {
+        playerScore = 0;
     computerScore = 0;
     playerScoreDisplay.textContent = playerScore;
     computerScoreDisplay.textContent = computerScore;
     resultDisplay.textContent = "New Game!";
     resultDisplay.classList.remove("redText", "greenText", "blackText");
+    }, 2000);
+
+    
 }
 
 // there is a slight issue with this method. It is clear who the winner is, the switching to the new game is abrupt and does not visibly declare the winner before before switching to the new game. So let's see how we can solve this. 
+
+
 
 
